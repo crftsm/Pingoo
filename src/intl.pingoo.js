@@ -62,7 +62,6 @@ document.querySelector(".bt--principal").addEventListener("click", function() {
   const input = document.querySelector("#intl_pingoo");
   const button = document.querySelector(".bt--principal");
 
-  // Se o valor for a mensagem de selecionar opções
   if (input.value === "Seleccione al menos una opción para que podamos crear la mejor contraseña.") {
       button.classList.add("bt--error-en-copiar");
       input.classList.add("contrasena--no-copiado");
@@ -70,7 +69,6 @@ document.querySelector(".bt--principal").addEventListener("click", function() {
       button.classList.remove("bt--principal");
       button.textContent = "¡Sin contraseña para copiar!";
       
-      // Timeout para restaurar o botão ao estado original
       setTimeout(() => {
           button.classList.remove("bt--error-en-copiar");
           button.classList.add("bt--principal");
@@ -78,10 +76,9 @@ document.querySelector(".bt--principal").addEventListener("click", function() {
           input.classList.remove("contrasena--no-copiado");
       }, 2500);
       
-      return; // Impede a execução do clipboard.writeText
+      return;
   }
 
-  // Se tiver uma senha válida para copiar
   navigator.clipboard.writeText(input.value).then(() => {
       button.classList.add("bt--copiado-con-exito");
       button.classList.remove("bt--principal");
