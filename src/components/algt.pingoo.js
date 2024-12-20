@@ -6,18 +6,15 @@ class GeneradorContrasena {
     this.especiales = "!@#$%^&*()_-+=[]{}|;:,.<>/?";
   }
 
-  // Genera bytes aleatorios criptográficamente seguros
   obtenerBytesAleatorios(length) {
     return window.crypto.getRandomValues(new Uint8Array(length));
   }
 
-  // Selecciona un carácter aleatorio de una cadena usando números aleatorios criptográficamente seguros
   caracterAleatorioSeguro(str) {
     const bytes = this.obtenerBytesAleatorios(1);
     return str.charAt(bytes[0] % str.length);
   }
 
-  // Mezcla una cadena de forma segura
   mezclarCadena(str) {
     const array = str.split("");
     for (let i = array.length - 1; i > 0; i--) {
@@ -38,7 +35,6 @@ class GeneradorContrasena {
     minNumeros = 1,
     minEspeciales = 1,
   } = {}) {
-    // Validación de parámetros
     if (longitud < 8)
       throw new Error("La longitud mínima debe ser 8 caracteres");
 
@@ -54,7 +50,6 @@ class GeneradorContrasena {
       );
     }
 
-    // Generar caracteres mínimos requeridos
     let contraseña = "";
 
     if (incluirMayusculas) {
@@ -81,24 +76,20 @@ class GeneradorContrasena {
       }
     }
 
-    // Construir conjunto de caracteres permitidos
     let caracteresPermitidos = "";
     if (incluirMayusculas) caracteresPermitidos += this.mayusculas;
     if (incluirMinusculas) caracteresPermitidos += this.minusculas;
     if (incluirNumeros) caracteresPermitidos += this.numeros;
     if (incluirEspeciales) caracteresPermitidos += this.especiales;
 
-    // Completar la longitud restante
     const caracteresRestantes = longitud - contraseña.length;
     for (let i = 0; i < caracteresRestantes; i++) {
       contraseña += this.caracterAleatorioSeguro(caracteresPermitidos);
     }
 
-    // Mezclar la contraseña final
     return this.mezclarCadena(contraseña);
   }
 
-  // Verifica la fortaleza de la contraseña
   verificarFortaleza(contraseña) {
     const tieneMayusculas = /[A-Z]/.test(contraseña);
     const tieneMinusculas = /[a-z]/.test(contraseña);
