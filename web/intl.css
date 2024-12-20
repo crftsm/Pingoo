@@ -1,0 +1,248 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    overflow: hidden;
+}
+
+.headline {
+    height: calc(100vh - 15vh);
+}
+
+.headlinec {
+    position: relative;
+    width: calc(100% - 490px);
+    margin: 0 auto;
+    height: 490px;
+    text-align: center;
+}
+
+.headlinec .headlinexd {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+.headlinec .headlinexd h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.headlinec .headlinexd input {
+    background-color: 0px 2px 8px 0px rgba(60, 64, 67, 0.25);
+    width: calc(860px - 50px);
+    height: 60px;
+    border: 1px solid #dfe1e5;
+    outline: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: border 0.6s ease-in-out, background 0.6s ease-in-out;
+    font-family: 'Plus Jakarta Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.headline-bts {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.headline-bts .bt--principal {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #089CFF;
+    border-radius: 5px;
+    color: #FFFF;
+    background-color: #089CFF;
+    font-weight: 600;
+    font-size: 20px;
+    width: 300px;
+    transition: 0.6s ease-in-out;
+    font-family: 'Plus Jakarta Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.headline-bts .bt--secondary {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #CFD0D1;
+    border-radius: 5px;
+    color: #089CFF;
+    background-color: #FFFF;
+    font-weight: 600;
+    font-size: 20px;
+    transition: 0.6s ease-in-out;
+    font-family: 'Plus Jakarta Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.headline-bts .bt--principal:hover {
+    transition: 0.6s ease-in-out;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.headline-bts .bt--secondary:hover {
+    transition: shadow 0.3s ease-in-out;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.configurations {
+    display: none;
+    background-color: #FFFF;
+    border-radius: 5px;
+    position: absolute;
+    align-items: center;
+    top: 21%;
+    left: 38%;
+    border: 1px solid #BBBBBB;
+    width: 420px;
+    margin: 0 auto;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#close--conf { cursor: pointer; }
+
+.configurations .conf--headline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.configurations .conf--options ul .conf--opt {
+    cursor: pointer;
+    list-style: none;
+    background-color: rgba(58, 217, 37, 40%);
+    border: 1px solid #3AD925;
+    padding: 10px;
+    transition: background 0.4s ease-in-out;
+}
+
+.configurations .conf--options ul .conf--opt:hover {
+    background-color: rgba(58, 217, 37, 60%);
+}
+
+/* responsive */
+@media screen and (width <= 1270px) {
+    .headlinec {
+        width: 100%;
+    }
+
+    .configurations {
+        left: 35%;
+    }
+}
+
+@media screen and (width <= 870px) {
+    .headlinec {
+        width: 100%;
+    }
+
+    .headlinec .headlinexd h1 {
+        font-size: 40px;
+    }
+
+    .headlinec .headlinexd input {
+        width: 80%;
+    }
+
+    .configurations {
+        left: 32%;
+    }
+}
+
+@media screen and (width <= 634px) {
+    #intl {
+        margin-top: 122px;
+    }
+
+    .headlinec .headlinexd h1 {
+        font-size: 26px;
+    }
+
+    .headline-bts {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .configurations {
+        left: 16%;
+    }
+
+    .bt--secondary {
+        display: none;
+    }
+}
+/*============ otras clases ========================*/
+.bt--copiado-con-exito {
+    cursor: pointer;
+    padding: 10px;
+    width: 270px;
+    border: 1px solid #3AD925;
+    border-radius: 5px;
+    color: #FFFF;
+    background-color: #3AD925;
+    font-weight: 600;
+    font-size: 20px;
+    transition: 0.6s ease-in-out;
+    font-family: 'Plus Jakarta Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.contrasena--copiado {
+    background-color: rgba(58, 217, 37, 43%);
+    width: calc(860px - 50px);
+    height: 60px;
+    color: #000;
+    border: 1px solid #3AD925;
+    outline: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: border 0.6s ease-in-out, background 0.6s ease-in-out;
+    font-family: 'Plus Jakarta Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bt--error-en-copiar {
+    cursor: pointer;
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #d92525;
+    border-radius: 5px;
+    color: #FFFF;
+    background-color: #c61414;
+    font-weight: 600;
+    font-size: 20px;
+    transition: 0.6s ease-in-out;
+    font-family: 'Plus Jakarta Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+}
+
+.contrasena--no-copiado {
+    background-color: rgba(198, 20, 20, 40%);
+    width: calc(860px - 50px);
+    height: 60px;
+    color: #000;
+    border: 1px solid #c61414;
+    outline: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: border 0.6s ease-in-out, background 0.6s ease-in-out;
+    font-family: 'Plus Jakarta Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.opt--desactivado {
+    cursor: pointer;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 20%);
+    border: 1px solid #BBBBBB;
+    padding: 10px;
+    transition: background 0.4s ease-in-out;
+}
