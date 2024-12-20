@@ -158,6 +158,10 @@ body {
 }
 
 @media screen and (width <= 634px) {
+    .configurations {
+        width: 340px;
+    }
+    
     #intl {
         margin-top: 122px;
     }
@@ -172,11 +176,7 @@ body {
     }
 
     .configurations {
-        left: 16%;
-    }
-
-    .bt--secondary {
-        display: none;
+        left: 11%;
     }
 }
 /*============ otras clases ========================*/
